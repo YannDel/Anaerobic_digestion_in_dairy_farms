@@ -1,0 +1,1632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee" uses_conveyor=""/>
+		<name>Version 11</name>
+		<uuid>9b673764-3f29-416f-a73e-43358cd0b934</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="1.8.2" isee:build_number="1708" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:simulation_delay="0.0123967" isee:restore_on_start="false" method="Euler" time_units="Months" isee:instantaneous_flows="false">
+		<start>0</start>
+		<stop>120</stop>
+		<dt reciprocal="true">1</dt>
+	</sim_specs>
+	<isee:prefs show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" saved_runs="5" keep="false" rifp="true"/>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<default_format/>
+	<isee:sensi_specs_list active_index="0">
+		<isee:sensi_specs name="Sensitivity" method="grid">
+			<isee:variable starting_value="0" ending_value="3" type="incremental" seed="12345" name="Weighting_factor" num_samples="25"/>
+		</isee:sensi_specs>
+	</isee:sensi_specs_list>
+	<isee:optimizer_specs_list active_index="0">
+		<isee:optimizer_specs name="Optimization" method="Powell" additional_starts="0" report_interval="1" confidence_range="0"/>
+	</isee:optimizer_specs_list>
+	<isee:payoff_specs_list>
+		<isee:payoff_specs name="Payoff"/>
+	</isee:payoff_specs_list>
+	<model_units>
+		<unit name="Dimensionless">
+			<eqn>1</eqn>
+			<alias>dmnl</alias>
+			<alias>unitless</alias>
+			<alias>fraction</alias>
+		</unit>
+		<unit name="Cubic Meters">
+			<eqn>Meters^3</eqn>
+			<alias>cubic meter</alias>
+			<alias>cu m</alias>
+		</unit>
+		<unit name="Meters">
+			<eqn/>
+			<alias>m</alias>
+			<alias>meter</alias>
+		</unit>
+		<unit name="Kilograms">
+			<eqn/>
+			<alias>kg</alias>
+			<alias>kilogram</alias>
+		</unit>
+		<unit name="Pound Sterling">
+			<eqn/>
+			<alias>GBP</alias>
+			<alias>pounds sterling</alias>
+			<alias>uk pound</alias>
+			<alias>uk pounds</alias>
+		</unit>
+		<unit name="US Dollars">
+			<eqn/>
+			<alias>USD</alias>
+			<alias>$</alias>
+		</unit>
+		<unit name="US Dollars Per Day">
+			<eqn>US_Dollars/Days</eqn>
+			<alias>US Dollar Per Day</alias>
+		</unit>
+		<unit name="Days">
+			<eqn/>
+			<alias>day</alias>
+		</unit>
+		<unit name="Hours">
+			<eqn/>
+			<alias>hr</alias>
+			<alias>hour</alias>
+		</unit>
+		<unit name="US Dollars Per Month">
+			<eqn>US_Dollars/Months</eqn>
+			<alias>US Dollar Per Month</alias>
+		</unit>
+		<unit name="Months">
+			<eqn/>
+			<alias>mo</alias>
+			<alias>month</alias>
+		</unit>
+		<unit name="Years">
+			<eqn/>
+			<alias>yr</alias>
+			<alias>year</alias>
+		</unit>
+		<unit name="Per Month">
+			<eqn>1/Months</eqn>
+		</unit>
+		<unit name="Per Year">
+			<eqn>1/Years</eqn>
+		</unit>
+		<unit name="kWh">
+			<eqn>kW*hr</eqn>
+		</unit>
+		<unit name="cubic meters per million gal">
+			<eqn>m^3/(million-gal)</eqn>
+		</unit>
+		<unit name="GJ per million gal">
+			<eqn>GJ/(million-gal)</eqn>
+		</unit>
+		<unit name="million gal per day">
+			<eqn>million-gal/day</eqn>
+		</unit>
+		<unit name="million gal per year">
+			<eqn>million-gal/yr</eqn>
+		</unit>
+		<unit name="per million">
+			<eqn>1/million</eqn>
+		</unit>
+		<unit name="tonne per million gal">
+			<eqn>tonne/(million-gal)</eqn>
+		</unit>
+		<unit name="ton per million gal">
+			<eqn>ton/(million-gal)</eqn>
+		</unit>
+		<unit name="Btu per gallon">
+			<eqn>btu/gallon</eqn>
+		</unit>
+		<unit name="MilesPerVehiclePerYr">
+			<eqn>mi/(vehicles*yr)</eqn>
+		</unit>
+		<unit name="GalPerTerminalPerYr">
+			<eqn>gal/(terminals*yr)</eqn>
+		</unit>
+		<unit name="PerLoadUSDPerMi">
+			<eqn>USD/(mi*Load)</eqn>
+		</unit>
+		<unit name="ProjectGalPerTon">
+			<eqn>Projects*(gal/ton)</eqn>
+		</unit>
+		<unit name="DaysPerYr">
+			<eqn>day/yr</eqn>
+		</unit>
+		<unit name="ProjectUSDPerYr">
+			<eqn>Projects*(USD/yr)</eqn>
+		</unit>
+		<unit name="ProjectTonPerDay">
+			<eqn>Projects*(ton/day)</eqn>
+		</unit>
+		<unit name="MillionBTUPerGal">
+			<eqn>MillionBTU/gal</eqn>
+		</unit>
+		<unit name="GramsPerMJ">
+			<eqn>g/MJ</eqn>
+		</unit>
+		<unit name="MillionBTUperMJ">
+			<eqn>MillionBTU/MJ</eqn>
+		</unit>
+		<unit name="HoursPerProjectPerYr">
+			<eqn>hr/(projects*yr)</eqn>
+		</unit>
+		<unit name="USDPerUnit">
+			<eqn>USD/units</eqn>
+		</unit>
+		<unit name="USDA to nominal">
+			<eqn>units/USDA</eqn>
+		</unit>
+		<unit name="TonsPerUnit">
+			<eqn>ton/units</eqn>
+		</unit>
+		<unit name="UnitsPerAcrePerYrPerYr">
+			<eqn>units/(acre-yr^2)</eqn>
+		</unit>
+		<unit name="acres per square mile">
+			<eqn>acre/mi^2</eqn>
+		</unit>
+		<unit name="barrels per gallon">
+			<eqn>bbl/gal</eqn>
+		</unit>
+		<unit name="billion GPY">
+			<eqn>billions-gal/yr</eqn>
+		</unit>
+		<unit name="BillionMilesPerYear">
+			<eqn>billions-mi/yr</eqn>
+		</unit>
+		<unit name="days per year">
+			<eqn>day/year</eqn>
+		</unit>
+		<unit name="dollars per acre">
+			<eqn>usd/acres</eqn>
+		</unit>
+		<unit name="dollars per acre per yr">
+			<eqn>USD/(acre-yr)</eqn>
+		</unit>
+		<unit name="dollars per load">
+			<eqn>usd/load</eqn>
+		</unit>
+		<unit name="gal per ton">
+			<eqn>gal/ton</eqn>
+		</unit>
+		<unit name="gallons per barrel">
+			<eqn>gal/bbl</eqn>
+		</unit>
+		<unit name="gallons per dollar">
+			<eqn>gal/USD</eqn>
+		</unit>
+		<unit name="gallons per month">
+			<eqn>gal/mo</eqn>
+		</unit>
+		<unit name="gallons per visit">
+			<eqn>gal/Visit</eqn>
+		</unit>
+		<unit name="gallons per year">
+			<eqn>gal/yr</eqn>
+		</unit>
+		<unit name="GPD">
+			<eqn>gal/day</eqn>
+		</unit>
+		<unit name="million tons">
+			<eqn>million-ton</eqn>
+		</unit>
+		<unit name="million units">
+			<eqn>million-units</eqn>
+		</unit>
+		<unit name="million USD">
+			<eqn>USD-million</eqn>
+		</unit>
+		<unit name="million usda">
+			<eqn>million-usda</eqn>
+		</unit>
+		<unit name="months per year">
+			<eqn>mo/yr</eqn>
+		</unit>
+		<unit name="MPG">
+			<eqn>mi/gal</eqn>
+		</unit>
+		<unit name="per billion">
+			<eqn>1/billions</eqn>
+		</unit>
+		<unit name="per thousand">
+			<eqn>1/thousand</eqn>
+		</unit>
+		<unit name="Projects per Year">
+			<eqn>projects/yr</eqn>
+		</unit>
+		<unit name="thousand acres">
+			<eqn>thousand-acres</eqn>
+		</unit>
+		<unit name="thousand ton per yr">
+			<eqn>thousand-ton/yr</eqn>
+		</unit>
+		<unit name="ton per acre per yr">
+			<eqn>ton/(acre-yr)</eqn>
+		</unit>
+		<unit name="ton per day">
+			<eqn>ton/day</eqn>
+		</unit>
+		<unit name="ton per year">
+			<eqn>ton/yr</eqn>
+		</unit>
+		<unit name="tons per load">
+			<eqn>ton/load</eqn>
+		</unit>
+		<unit name="USD per barrel">
+			<eqn>USD/bbl</eqn>
+		</unit>
+		<unit name="USD per gallon">
+			<eqn>USD/gal</eqn>
+		</unit>
+		<unit name="USD per ton">
+			<eqn>USD/ton</eqn>
+		</unit>
+		<unit name="USD per visit">
+			<eqn>USD/Visit</eqn>
+		</unit>
+		<unit name="visits per month">
+			<eqn>Visit/mo</eqn>
+		</unit>
+		<unit name="Visits per year">
+			<eqn>Visit/yr</eqn>
+		</unit>
+		<unit name="VehiclesMPG">
+			<eqn>Vehicles*mi/gal</eqn>
+		</unit>
+		<unit name="TonnePerGram">
+			<eqn>tonne/g</eqn>
+		</unit>
+		<unit name="TonnesPerGram">
+			<eqn>Tonnes/g</eqn>
+		</unit>
+	</model_units>
+	<model>
+		<variables>
+			<stock name="Manure">
+				<eqn>0</eqn>
+				<inflow>Manure_generated</inflow>
+				<outflow>Manure_for_Bio_Gas</outflow>
+				<non_negative/>
+				<units>kg</units>
+			</stock>
+			<flow name="Manure generated">
+				<eqn>Total_cows*Manure_per_cow_per_day*Fraction_time_inside</eqn>
+				<non_negative/>
+				<units>kg/Months</units>
+			</flow>
+			<aux name="Manure per cow per day">
+				<eqn>45*30</eqn>
+				<units>kg/Cow/Day</units>
+			</aux>
+			<aux name="CHP HtP ratio">
+				<eqn>3.8</eqn>
+			</aux>
+			<stock name="Bio gas">
+				<eqn>0</eqn>
+				<inflow>Bio_Gas_from_AD</inflow>
+				<outflow>Gas_to_CHP</outflow>
+				<non_negative/>
+				<units>Cubic Meters</units>
+			</stock>
+			<flow name="Bio Gas from AD">
+				<eqn>Manure_for_Bio_Gas*&quot;Anaerobic_digestion_converter_(Manure_into_Bio_Gas)&quot;</eqn>
+				<non_negative/>
+				<units>Cubic Meters/Months</units>
+			</flow>
+			<aux name="Anaerobic digestion\nconverter (Manure into Bio Gas)">
+				<eqn>652.1/7000</eqn>
+				<units>Cubic Meters/kg/Days</units>
+			</aux>
+			<aux name="Electricity / Bio gas unit">
+				<eqn>1074/652.1</eqn>
+				<units>kWh/Cubic Meters</units>
+			</aux>
+			<flow name="Manure for Bio Gas">
+				<eqn>Units*Manure_taken_per_day_per_unit</eqn>
+				<non_negative/>
+				<units>kg/Months</units>
+			</flow>
+			<aux name="Electricity used per cow per day">
+				<eqn>2*0.80*SIN(2*3.14*TIME*365*15)*SIN(2*3.14*TIME*365*15)</eqn>
+				<units>kWh/cow/Days</units>
+			</aux>
+			<flow name="Gas to CHP">
+				<eqn>Gas_consumption_per_unit_per_day*Units</eqn>
+				<non_negative/>
+				<units>Cubic Meters/Months</units>
+			</flow>
+			<stock name="Revenue">
+				<eqn>0</eqn>
+				<inflow>Elec_revenue</inflow>
+				<inflow>Fertilizer_revenue</inflow>
+				<inflow>Heat_revenue</inflow>
+				<units>Pound Sterling</units>
+			</stock>
+			<flow name="Elec revenue">
+				<eqn>Elec_Generation_FiT*Electricity_generation+Elec_Export_FiT*Surplus_Electricity+Demand_met_by_generation*Elec_Price_from_grid</eqn>
+				<non_negative/>
+				<units>Pound Sterling/Months</units>
+			</flow>
+			<aux name="Elec Generation FiT">
+				<eqn>0.045</eqn>
+				<units>£/kWh</units>
+			</aux>
+			<aux name="Manure taken per day per unit">
+				<eqn>30*7000</eqn>
+				<units>kg/unit/day</units>
+			</aux>
+			<aux name="CHP Capacity">
+				<eqn>Units*Capacity_per_unit</eqn>
+			</aux>
+			<aux name="Capacity per unit">
+				<eqn>44.7</eqn>
+				<units>kW</units>
+			</aux>
+			<aux name="Gas consumption\nper unit per day">
+				<eqn>652.1*30</eqn>
+				<units>Cubic Meters/Unit/Days</units>
+			</aux>
+			<aux name="Electricity generation">
+				<eqn>Gas_to_CHP*&quot;Electricity_/_Bio_gas_unit&quot;</eqn>
+			</aux>
+			<aux name="Electricity demand">
+				<eqn>Total_cows*Electricity_used_per_cow_per_day</eqn>
+			</aux>
+			<aux name="Surplus Electricity">
+				<eqn>Electricity_generation-Electricity_demand</eqn>
+			</aux>
+			<aux name="Heat Generation">
+				<eqn>CHP_HtP_ratio*Electricity_generation</eqn>
+			</aux>
+			<stock name="Considering">
+				<eqn>0</eqn>
+				<scale min="0" max="100"/>
+				<inflow>beginning_to_consider</inflow>
+				<outflow>adopting</outflow>
+				<non_negative/>
+			</stock>
+			<stock name="Committed">
+				<eqn>2</eqn>
+				<format precision="1"/>
+				<scale min="0" max="100"/>
+				<inflow>adopting</inflow>
+				<outflow>backsliding</outflow>
+				<non_negative/>
+			</stock>
+			<flow name="backsliding">
+				<eqn>Committed * backsliding_rate_for_committed</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="adopting">
+				<eqn>Considering*adoption_rate</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="adoption rate">
+				<eqn>Strength_of_neighborhood_effect</eqn>
+				<gf>
+					<yscale min="0" max="1"/>
+					<xpts>0,20,40,60,80,100,120,140,160,180,200</xpts>
+					<ypts>0.05,0.06,0.1,0.19,0.32,0.5,0.685,0.795,0.925,0.98,1</ypts>
+				</gf>
+			</aux>
+			<aux name="potential fraction not committed">
+				<eqn>1 - potential_fraction_committed</eqn>
+			</aux>
+			<aux name="backsliding rate\nfor committed">
+				<eqn>0</eqn>
+			</aux>
+			<aux name="Total Potential\nSize of 'Movement">
+				<eqn>100</eqn>
+			</aux>
+			<aux name="Target for Not Committed">
+				<eqn>Total_Potential_Size_of_&apos;Movement*potential_fraction_not_committed</eqn>
+			</aux>
+			<flow name="beginning to consider">
+				<eqn>(Not_Committed - Target_for_Not_Committed) / 3</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Not Committed">
+				<eqn>100-Committed</eqn>
+				<scale min="0" max="100"/>
+				<inflow>backsliding</inflow>
+				<outflow>beginning_to_consider</outflow>
+				<non_negative/>
+			</stock>
+			<aux name="potential fraction committed">
+				<eqn>Strength_of_neighborhood_effect</eqn>
+				<gf>
+					<yscale min="0" max="1"/>
+					<xpts>0,20,40,60,80,100,120,140,160,180,200</xpts>
+					<ypts>0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.79,0.9,0.98,1</ypts>
+				</gf>
+			</aux>
+			<aux name="Cows per farm">
+				<eqn>150</eqn>
+			</aux>
+			<aux name="Units">
+				<eqn>Committed</eqn>
+			</aux>
+			<aux name="Elec Export FiT">
+				<eqn>0.0524</eqn>
+			</aux>
+			<aux name="Total cows">
+				<eqn>Cows_per_farm*Committed</eqn>
+			</aux>
+			<stock name="In Construction 1">
+				<eqn>0</eqn>
+				<inflow>breaking_ground_1</inflow>
+				<outflow>coming_on_line_1</outflow>
+				<conveyor>
+					<len>2</len>
+				</conveyor>
+			</stock>
+			<stock name="On line 1">
+				<eqn>2</eqn>
+				<inflow>coming_on_line_1</inflow>
+				<outflow>retirements_1</outflow>
+				<non_negative/>
+			</stock>
+			<flow name="coming on line 1">
+				<eqn>0</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="retirements 1">
+				<eqn>0</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="productivity 1">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="threshold as frac of plant size">
+				<eqn>0.75</eqn>
+			</aux>
+			<flow name="breaking ground 1">
+				<eqn>PULSE(plant_size*Plant_Start_Signal,0,DT)</eqn>
+				<non_negative/>
+			</flow>
+			<stock name="Widget Inventory 1">
+				<eqn>0</eqn>
+				<inflow>producing_1</inflow>
+				<outflow>sales_1</outflow>
+				<non_negative/>
+			</stock>
+			<flow name="producing 1">
+				<eqn>On_line_1 * productivity_1</eqn>
+				<non_negative/>
+			</flow>
+			<flow name="sales 1">
+				<eqn>0</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="plant size">
+				<eqn>1</eqn>
+			</aux>
+			<aux name="Plant Start Signal">
+				<eqn>IF Facility_gap &gt;= plant_start_threshold THEN 1 ELSE 0</eqn>
+			</aux>
+			<aux name="plant start threshold">
+				<eqn>threshold_as_frac_of_plant_size * plant_size</eqn>
+			</aux>
+			<aux name="Facility gap">
+				<eqn>Committed-On_line_1-In_Construction_1</eqn>
+			</aux>
+			<aux name="Strength of neighborhood effect">
+				<eqn>On_line_1*Weighting_factor</eqn>
+			</aux>
+			<aux name="Weighting factor">
+				<eqn>3</eqn>
+			</aux>
+			<aux name="actual days per yr">
+				<eqn>365</eqn>
+				<units>day/yr</units>
+			</aux>
+			<aux name="Initial Equity Investment">
+				<doc>DEFINITION: Amount of total project Fixed Capital Investment to be financed through equity ( $ )
+
+UNITS:  US Dollars
+
+TYPE: Internal calculation
+
+SOURCE: 
+
+COMMENT:</doc>
+				<eqn>FCI_after_grant*(1-loan_fraction)</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>US Dollars</units>
+			</aux>
+			<aux name="Fixed Capital Investment">
+				<doc>DEFINITION: Expected Fixed Capital Investment for &quot;next&quot; Pioneer Plant, after Capital Subsidy
+ 
+UNITS: US Dollars
+ 
+TYPE: Internal Calculation
+ 
+SOURCE: 
+ 
+COMMENT: 
+</doc>
+				<eqn>1129744*Units</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>£</units>
+			</aux>
+			<aux name="Expected daily op Cost">
+				<doc>DEFINITION: Calculates expected operating cost for &quot;next&quot; pioneer plant when fully operational
+
+UNITS:  USD per year
+
+TYPE: Internal Calculation for this sector
+
+SOURCE: N/A
+
+COMMENT: Downstream NPV calculation assumes constant costs over plant lifetime, once operational. 
+</doc>
+				<eqn>30*0.052*1129744*Units/365</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>US Dollars Per Day</units>
+			</aux>
+			<aux name="loan fraction">
+				<doc>DEFINITION: Expected fraction of Investment to be funded through equity financing for pioneer plants, after loan guarantees have been applied.
+
+UNITS:  Unitless
+
+TYPE: Internal Calculation for this sector
+
+SOURCE: 
+
+COMMENT: Calculated as min of what&apos;s implied by policy or by industry state of evolution.</doc>
+				<eqn>1</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>Unitless</units>
+			</aux>
+			<aux name="Loan Principal">
+				<doc>DEFINITION: Amount of total project Fixed Capital Investment for &quot;next&quot; pioneer project to be financed through loan financing 
+
+UNITS:  US Dollars
+
+TYPE: Internal calculation
+
+SOURCE:
+
+COMMENT: 
+</doc>
+				<eqn>FCI_after_grant-Initial_Equity_Investment</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>US Dollars</units>
+			</aux>
+			<aux name="Daily Loan Payment">
+				<doc>DEFINITION: Annual payment associated with repayment of loan 
+
+UNITS:  USD per year
+
+TYPE: Internal Calculation
+
+SOURCE: 
+
+COMMENT: 
+</doc>
+				<eqn>((Loan_Principal/discount_factor_loan_payment)/actual_days_per_yr) * end_loan_payment_switch</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>US Dollars Per Day</units>
+			</aux>
+			<aux name="Net daily rev">
+				<doc>DEFINITION: Calculates expected revenues net of  expected operating cost for plant when fully operational, using current values for inputs 
+
+UNITS:  USD per year
+
+TYPE: Internal Calculation for this sector
+
+SOURCE: N/A
+
+COMMENT: Downstream NPV calculation assumes constant rev net of op cost over plant lifetime, once plant is operational. 
+</doc>
+				<eqn>Heat_revenue+Elec_revenue+Fertilizer_revenue-Expected_daily_op_Cost</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>US Dollars Per Day</units>
+			</aux>
+			<aux name="discount factor loan payment">
+				<doc>DEFINITION:  Calculates discount factor for doing NPV calculation associated with loan repayment (principal + interest) 
+
+UNITS:  years
+
+TYPE:  Internal Calculation for this sector
+
+SOURCE:  Standard financial calculation for annuity.  See, for example, Present Value entry in wikipedia
+
+COMMENT:  Req&apos;d Rate of Return &gt;0 or eq&apos;n will generate division by 0.
+
+Units check fails because of exponentiation operation</doc>
+				<eqn>(1/debt_interest_rate_as_fraction)*
+(1-1/(1+debt_interest_rate_as_fraction)^(term_of_loan))</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>years</units>
+			</aux>
+			<aux name="term of loan">
+				<doc>DEFINITION: Project rate of return required to stimulate investment in a project, given current state of industry 
+ 
+UNITS: %/yr
+ 
+TYPE: Internal calculation
+ 
+SOURCE: 
+ 
+COMMENTS: 
+ 
+</doc>
+				<eqn>10</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>yr</units>
+			</aux>
+			<aux name="debt interest rate as %">
+				<doc>DEFINITION: Project rate of return required to stimulate investment in a project, given current state of industry 
+ 
+UNITS: %/yr
+ 
+TYPE: Internal calculation
+ 
+SOURCE: 
+ 
+COMMENTS: 
+ 
+</doc>
+				<eqn>3</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>per year</units>
+			</aux>
+			<aux name="debt interest rate as fraction">
+				<doc>DEFINITION: Project rate of return required to stimulate investment in a project, given current state of industry, expressed as a fraction 
+ 
+UNITS: 1/yr
+ 
+TYPE: Internal calculation
+ 
+SOURCE: 
+ 
+COMMENTS: 
+ 
+</doc>
+				<eqn>&quot;debt_interest_rate_as_%&quot;/100</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>per year</units>
+			</aux>
+			<stock name="NPV of the project">
+				<eqn>-1 *Initial_Equity_Investment</eqn>
+				<inflow>cash_flows</inflow>
+				<units>USD</units>
+			</stock>
+			<flow name="cash flows">
+				<eqn>(Net_daily_rev-Daily_Loan_Payment)*daily_discounter</eqn>
+				<units>US Dollars Per Month</units>
+			</flow>
+			<stock name="daily discounter">
+				<eqn>1</eqn>
+				<outflow>decrease_in_discounting</outflow>
+				<non_negative/>
+				<units>unitless</units>
+			</stock>
+			<flow name="decrease in discounting">
+				<eqn>daily_discounter * daily_discount_rate</eqn>
+				<non_negative/>
+				<units>Per Month</units>
+			</flow>
+			<aux name="daily discount rate">
+				<doc>DEFINITION: Calculates NPV of loan payments over length of loan 
+
+UNITS:  US Dollars
+
+TYPE: Internal Calculation for this sector
+
+SOURCE: N/A
+
+COMMENT: Using annual loan payment, this eq&apos;n does a PV calculation for the Design/Construction/Startup phase + Loan term, and then subtracts the PV associated with design, construction, startup, leaving the NPV of loan payments over period loan is repaid.  Note that this assumes no loan payment until plant is fully operational.</doc>
+				<eqn>requried_rate_of_return_as_fraction / actual_days_per_yr</eqn>
+				<format precision="1" scale_by="1"/>
+				<units>1/day</units>
+			</aux>
+			<aux name="required rate of return as pct">
+				<eqn>8</eqn>
+				<units>per year</units>
+			</aux>
+			<aux name="requried rate of return as fraction">
+				<eqn>required_rate_of_return_as_pct/100</eqn>
+				<units>per year</units>
+			</aux>
+			<stock name="Stock 1">
+				<eqn>0</eqn>
+				<inflow>Flow_1</inflow>
+				<non_negative/>
+			</stock>
+			<flow name="Flow 1">
+				<eqn>Daily_Loan_Payment</eqn>
+				<non_negative/>
+			</flow>
+			<aux name="simulated time in years">
+				<eqn>TIME/actual_days_per_yr</eqn>
+			</aux>
+			<aux name="end loan payment switch">
+				<eqn>IF term_of_loan &gt;= simulated_time_in_years THEN 1 ELSE 0</eqn>
+			</aux>
+			<aux name="Heat Generation FiT">
+				<eqn>0.0674</eqn>
+				<units>£/kWh</units>
+			</aux>
+			<aux name="Demand met by generation">
+				<eqn>Electricity_generation-Surplus_Electricity</eqn>
+			</aux>
+			<aux name="Elec Price from grid">
+				<eqn>0.1379</eqn>
+				<units>£/kWh</units>
+			</aux>
+			<flow name="Heat revenue">
+				<eqn>Heat_Generation*Heat_Generation_FiT</eqn>
+				<non_negative/>
+				<units>Pound Sterling/Months</units>
+			</flow>
+			<flow name="Fertilizer revenue">
+				<eqn>Fertilizer_generation*Fertilizer_price</eqn>
+				<non_negative/>
+				<units>Pound Sterling/Months</units>
+			</flow>
+			<aux name="Fertilizer generation">
+				<eqn>Manure_for_Bio_Gas*&quot;Fertilizer_/_Manure_unit&quot;</eqn>
+			</aux>
+			<aux name="Fertilizer price">
+				<eqn>0.005</eqn>
+			</aux>
+			<aux name="Fertilizer / Manure unit">
+				<eqn>0.529</eqn>
+				<units>kg fert/kg manure</units>
+			</aux>
+			<aux name="Grant fraction">
+				<eqn>0.5</eqn>
+			</aux>
+			<aux name="Grant amount">
+				<eqn>Grant_fraction*Fixed_Capital_Investment</eqn>
+			</aux>
+			<aux name="FCI after grant">
+				<eqn>Fixed_Capital_Investment-Grant_amount</eqn>
+			</aux>
+			<aux name="Fraction time inside">
+				<eqn>1</eqn>
+			</aux>
+			<stock name="Cumulated CO2eq savings">
+				<eqn>0</eqn>
+				<inflow>CO2_stream</inflow>
+				<non_negative/>
+				<units>kg CO2eq</units>
+			</stock>
+			<aux name="GWP Methane">
+				<eqn>28</eqn>
+			</aux>
+			<aux name="UK Grid CO2 Footprint">
+				<eqn>TIME</eqn>
+				<gf>
+					<xscale min="0" max="120"/>
+					<yscale min="0.0961" max="0.1947"/>
+					<ypts>0.1947,0.19428,0.19344,0.19281,0.19218,0.19176,0.19134,0.190295,0.18925,0.18869,0.18813,0.18757,0.18687,0.18617,0.18547,0.18491,0.18435,0.18379,0.18323,0.18267,0.18211,0.18127,0.18085,0.18001,0.17918,0.17834,0.1775,0.17708,0.17624,0.1754,0.17456,0.17393,0.1733,0.17204,0.17162,0.1712,0.16995,0.16911,0.16827,0.16743,0.16701,0.16575,0.16491,0.16323,0.16239,0.16155,0.16029,0.159455,0.15862,0.15806,0.1575,0.15694,0.1561,0.15526,0.15442,0.15358,0.15295,0.15232,0.15148,0.150923333333333,0.150366666666667,0.14981,0.14855,0.14792,0.14729,0.14687,0.14645,0.14582,0.14519,0.14477,0.14435,0.14393,0.14351,0.14309,0.14267,0.14183,0.14057,0.13974,0.13932,0.13806,0.13722,0.1368,0.13638,0.1347,0.13386,0.1326,0.13218,0.13176,0.130715,0.12967,0.12841,0.12715,0.12652,0.12589,0.12463,0.12379,0.12337,0.12253,0.12085,0.12044,0.12002,0.11876,0.11834,0.1175,0.11708,0.11624,0.11582,0.11498,0.11372,0.11288,0.11204,0.11079,0.10995,0.10911,0.10827,0.10743,0.10617,0.10491,0.10281,0.10113,0.0961</ypts>
+				</gf>
+			</aux>
+			<flow name="CO2 stream">
+				<eqn>Electricity_generation*UK_Grid_CO2_Footprint</eqn>
+				<non_negative/>
+				<units>kg CO2eq/Months</units>
+			</flow>
+			<stock name="Cumulated elec gene">
+				<eqn>0</eqn>
+				<inflow>Flow_2</inflow>
+				<non_negative/>
+			</stock>
+			<flow name="Flow 2">
+				<eqn>Electricity_generation</eqn>
+				<non_negative/>
+			</flow>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_background_color="#FFFECF"/>
+				<slider color="black" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+			</style>
+			<view isee:show_pages="false" page_width="842" page_height="595" isee:page_cols="5" isee:page_rows="5" isee:scroll_y="270" zoom="40" isee:popup_graphs_are_comparative="true" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom"/>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="blue" background="white" font_size="9pt" isee:transparent="false"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stock x="1078" y="606" name="Manure"/>
+				<flow x="1007.25" y="607" name="Manure generated">
+					<pts>
+						<pt x="959" y="607"/>
+						<pt x="1055.5" y="607"/>
+					</pts>
+				</flow>
+				<aux x="1007.25" y="541" name="Manure per cow per day"/>
+				<connector uid="1" angle="270">
+					<from>Manure_per_cow_per_day</from>
+					<to>Manure_generated</to>
+				</connector>
+				<aux x="1436.5" y="654.5" name="CHP HtP ratio"/>
+				<stock x="1359" y="606" name="Bio gas"/>
+				<flow x="1287.75" y="607" name="Bio Gas from AD">
+					<pts>
+						<pt x="1239" y="607"/>
+						<pt x="1336.5" y="607"/>
+					</pts>
+				</flow>
+				<aux x="1287.75" y="531" name="Anaerobic digestion\nconverter (Manure into Bio Gas)"/>
+				<connector uid="2" angle="270">
+					<from>&quot;Anaerobic_digestion_converter_(Manure_into_Bio_Gas)&quot;</from>
+					<to>Bio_Gas_from_AD</to>
+				</connector>
+				<aux x="1353.75" y="445.5" name="Electricity / Bio gas unit"/>
+				<flow x="1141.25" y="607" name="Manure for Bio Gas">
+					<pts>
+						<pt x="1100.5" y="607"/>
+						<pt x="1206" y="607"/>
+					</pts>
+				</flow>
+				<connector uid="3" angle="29.8989">
+					<from>Manure_for_Bio_Gas</from>
+					<to>Bio_Gas_from_AD</to>
+				</connector>
+				<aux x="1550.83" y="346.667" name="Electricity used per cow per day"/>
+				<flow label_side="bottom" x="1409.25" y="606" name="Gas to CHP">
+					<pts>
+						<pt x="1381.5" y="606"/>
+						<pt x="1461" y="606"/>
+					</pts>
+				</flow>
+				<stock x="1749.92" y="573.75" name="Revenue"/>
+				<flow x="1658.34" y="573.75" name="Elec revenue">
+					<pts>
+						<pt x="1589.25" y="573.75"/>
+						<pt x="1727.42" y="573.75"/>
+					</pts>
+				</flow>
+				<aux x="1658.33" y="453.333" name="Elec Generation FiT"/>
+				<connector uid="4" angle="270">
+					<from>Elec_Generation_FiT</from>
+					<to>Elec_revenue</to>
+				</connector>
+				<aux label_side="bottom" x="1185" y="693" name="Manure taken per day per unit"/>
+				<connector uid="5" angle="116.963">
+					<from>Manure_taken_per_day_per_unit</from>
+					<to>Manure_for_Bio_Gas</to>
+				</connector>
+				<stacked_container uid="6" x="3135.42" y="603.333" width="235" height="160">
+					<graph x="3135.42" y="603.333" width="235" height="160" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Revenue"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="1159.25" y="783.75" name="CHP Capacity"/>
+				<aux x="1240.25" y="749.5" name="Capacity per unit"/>
+				<connector uid="7" angle="202.921">
+					<from>Capacity_per_unit</from>
+					<to>CHP_Capacity</to>
+				</connector>
+				<aux x="1313.75" y="736" name="Gas consumption\nper unit per day"/>
+				<connector uid="8" angle="60.9454">
+					<from>Gas_consumption_per_unit_per_day</from>
+					<to>Gas_to_CHP</to>
+				</connector>
+				<aux x="1441" y="523" name="Electricity generation"/>
+				<aux x="1527.25" y="409.5" name="Electricity demand"/>
+				<connector uid="9" angle="57.2423">
+					<from>Gas_to_CHP</from>
+					<to>Electricity_generation</to>
+				</connector>
+				<connector uid="10" angle="315.303">
+					<from>&quot;Electricity_/_Bio_gas_unit&quot;</from>
+					<to>Electricity_generation</to>
+				</connector>
+				<aux x="1491.75" y="467.5" name="Surplus Electricity"/>
+				<connector uid="11" angle="47.5598">
+					<from>Electricity_generation</from>
+					<to>Surplus_Electricity</to>
+				</connector>
+				<connector uid="12" angle="265.914">
+					<from>Electricity_used_per_cow_per_day</from>
+					<to>Electricity_demand</to>
+				</connector>
+				<connector uid="13" angle="238.53">
+					<from>Electricity_demand</from>
+					<to>Surplus_Electricity</to>
+				</connector>
+				<aux x="1467.75" y="731.5" name="Heat Generation"/>
+				<connector uid="14" angle="305.961">
+					<from>CHP_HtP_ratio</from>
+					<to>Heat_Generation</to>
+				</connector>
+				<connector uid="15" angle="322.431">
+					<from>Electricity_generation</from>
+					<to>Heat_Generation</to>
+				</connector>
+				<connector uid="16" angle="327.469">
+					<from>Surplus_Electricity</from>
+					<to>Elec_revenue</to>
+				</connector>
+				<connector uid="17" color="black" angle="335.556">
+					<from>Considering</from>
+					<to>adopting</to>
+				</connector>
+				<connector uid="18" color="#008F44" angle="122.005">
+					<from>adoption_rate</from>
+					<to>adopting</to>
+				</connector>
+				<connector uid="19" color="blue" angle="333.435">
+					<from>Not_Committed</from>
+					<to>beginning_to_consider</to>
+				</connector>
+				<connector uid="20" color="blue" angle="186.34">
+					<from>potential_fraction_committed</from>
+					<to>potential_fraction_not_committed</to>
+				</connector>
+				<connector uid="21" color="blue" angle="144.462">
+					<from>potential_fraction_not_committed</from>
+					<to>Target_for_Not_Committed</to>
+				</connector>
+				<connector uid="22" color="blue" angle="92.8624">
+					<from>Target_for_Not_Committed</from>
+					<to>beginning_to_consider</to>
+				</connector>
+				<connector uid="23" color="#008F44" angle="122.005">
+					<from>Committed</from>
+					<to>backsliding</to>
+				</connector>
+				<connector uid="24" color="#008F44" angle="14.0362">
+					<from>backsliding_rate_for_committed</from>
+					<to>backsliding</to>
+				</connector>
+				<connector uid="25" color="black" angle="0">
+					<from>Total_Potential_Size_of_&apos;Movement</from>
+					<to>Target_for_Not_Committed</to>
+				</connector>
+				<stock color="black" font_color="black" label_angle="263.44" x="447.5" y="609" name="Considering"/>
+				<stock color="#008F44" font_color="#008F44" label_angle="286.583" x="658.5" y="621.25" name="Committed"/>
+				<flow color="#008F44" font_color="#008F44" x="455.5" y="523" name="backsliding">
+					<pts>
+						<pt x="652.5" y="603.75"/>
+						<pt x="652.5" y="523"/>
+						<pt x="258.5" y="523"/>
+						<pt x="258.5" y="593.5"/>
+					</pts>
+				</flow>
+				<flow color="#008F44" font_color="#008F44" label_angle="134.702" x="547" y="607" name="adopting">
+					<pts>
+						<pt x="470" y="607"/>
+						<pt x="636" y="607"/>
+					</pts>
+				</flow>
+				<aux color="#008F44" font_color="#008F44" x="563.5" y="708" name="adoption rate"/>
+				<aux color="blue" label_angle="207.439" x="412.5" y="804" name="potential fraction not committed"/>
+				<aux color="#008F44" font_color="#008F44" x="384.5" y="466.5" name="backsliding rate\nfor committed"/>
+				<aux color="black" font_color="black" x="236.5" y="718" name="Total Potential\nSize of 'Movement"/>
+				<aux color="blue" label_angle="2.61621" x="354.5" y="718" name="Target for Not Committed"/>
+				<flow color="blue" label_angle="96.4616" x="349" y="608" name="beginning to consider">
+					<pts>
+						<pt x="285" y="608"/>
+						<pt x="425" y="608"/>
+					</pts>
+				</flow>
+				<stock color="blue" label_angle="263.44" x="262.5" y="611" name="Not Committed"/>
+				<aux color="blue" label_side="left" label_angle="225" x="540.5" y="840" name="potential fraction committed"/>
+				<aux x="752.917" y="547.25" name="Cows per farm"/>
+				<aux x="1063.75" y="900" name="Units"/>
+				<connector uid="26" angle="74.0546">
+					<from>Units</from>
+					<to>CHP_Capacity</to>
+				</connector>
+				<connector uid="27" angle="352.875">
+					<from>Units</from>
+					<to>Gas_to_CHP</to>
+				</connector>
+				<connector uid="28" angle="90">
+					<from>Units</from>
+					<to>Manure_for_Bio_Gas</to>
+				</connector>
+				<stacked_container uid="29" x="3412.5" y="788.833" width="265" height="195">
+					<graph x="3412.5" y="788.833" width="265" height="195" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Committed"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="30" x="3137.08" y="390.417" width="216.667" height="175.833">
+					<graph x="3137.08" y="390.417" width="216.667" height="175.833" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Electricity_used_per_cow_per_day"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<connector uid="31" angle="346.856">
+					<from>Electricity_generation</from>
+					<to>Elec_revenue</to>
+				</connector>
+				<aux x="1685" y="505" name="Elec Export FiT"/>
+				<connector uid="32" angle="248.8">
+					<from>Elec_Export_FiT</from>
+					<to>Elec_revenue</to>
+				</connector>
+				<stacked_container uid="33" x="3393.75" y="381.333" width="245" height="186.667">
+					<graph x="3393.75" y="381.333" width="245" height="186.667" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Gas_to_CHP"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="34" x="3406.67" y="601.666" width="276.667" height="161.667">
+					<graph x="3406.67" y="601.666" width="276.667" height="161.667" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Surplus_Electricity"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<aux x="851.667" y="607" name="Total cows"/>
+				<connector uid="35" angle="342.623">
+					<from>Cows_per_farm</from>
+					<to>Total_cows</to>
+				</connector>
+				<connector uid="36" angle="32.1523">
+					<from>Total_cows</from>
+					<to>Manure_generated</to>
+				</connector>
+				<connector uid="37" angle="56.5601">
+					<from>Total_cows</from>
+					<to>Electricity_demand</to>
+				</connector>
+				<connector uid="38" angle="139.399">
+					<from>threshold_as_frac_of_plant_size</from>
+					<to>plant_start_threshold</to>
+				</connector>
+				<connector uid="39" angle="12.5288">
+					<from>plant_size</from>
+					<to>breaking_ground_1</to>
+				</connector>
+				<connector uid="40" angle="89.7862">
+					<from>Plant_Start_Signal</from>
+					<to>breaking_ground_1</to>
+				</connector>
+				<connector uid="41" angle="77.4712">
+					<from>productivity_1</from>
+					<to>producing_1</to>
+				</connector>
+				<connector uid="42" angle="37.6942">
+					<from>On_line_1</from>
+					<to>producing_1</to>
+				</connector>
+				<connector uid="43" angle="339.444">
+					<from>plant_start_threshold</from>
+					<to>Plant_Start_Signal</to>
+				</connector>
+				<connector uid="44" angle="237.995">
+					<from>plant_size</from>
+					<to>plant_start_threshold</to>
+				</connector>
+				<stock color="blue" label_angle="265.906" x="589.333" y="1197.92" name="In Construction 1"/>
+				<stock x="768.333" y="1196.92" name="On line 1"/>
+				<flow x="672.833" y="1193.92" name="coming on line 1">
+					<pts>
+						<pt x="611.833" y="1193.92"/>
+						<pt x="745.833" y="1193.92"/>
+					</pts>
+				</flow>
+				<flow x="838.083" y="1193.92" name="retirements 1">
+					<pts>
+						<pt x="790.833" y="1193.92"/>
+						<pt x="909.333" y="1193.92"/>
+					</pts>
+				</flow>
+				<aux x="1083.33" y="1288.92" name="productivity 1"/>
+				<aux x="423.333" y="1357.92" name="threshold as frac of plant size"/>
+				<flow color="blue" label_angle="93.447" x="502.583" y="1194.92" name="breaking ground 1">
+					<pts>
+						<pt x="438.333" y="1194.92"/>
+						<pt x="566.833" y="1194.92"/>
+					</pts>
+				</flow>
+				<stock x="1155.33" y="1165.92" name="Widget Inventory 1"/>
+				<flow x="1067.58" y="1167.92" name="producing 1">
+					<pts>
+						<pt x="1002.33" y="1167.92"/>
+						<pt x="1132.83" y="1167.92"/>
+					</pts>
+				</flow>
+				<flow x="1244.08" y="1163.92" name="sales 1">
+					<pts>
+						<pt x="1177.83" y="1163.92"/>
+						<pt x="1334.33" y="1163.92"/>
+					</pts>
+				</flow>
+				<aux color="blue" label_angle="116.826" x="416.333" y="1136.92" name="plant size"/>
+				<aux color="blue" label_angle="164.068" x="502.333" y="1261.92" name="Plant Start Signal"/>
+				<aux x="417.333" y="1288.92" name="plant start threshold"/>
+				<aux x="666.333" y="1306.92" name="Facility gap"/>
+				<connector uid="45" angle="202.324">
+					<from>On_line_1</from>
+					<to>Facility_gap</to>
+				</connector>
+				<connector uid="46" angle="172.304">
+					<from>
+						<alias uid="47"/>
+					</from>
+					<to>Facility_gap</to>
+				</connector>
+				<connector uid="48" angle="314.89">
+					<from>In_Construction_1</from>
+					<to>Facility_gap</to>
+				</connector>
+				<connector uid="49" angle="154.588">
+					<from>Facility_gap</from>
+					<to>Plant_Start_Signal</to>
+				</connector>
+				<aux x="717.5" y="991.25" name="Strength of neighborhood effect"/>
+				<connector uid="50" angle="94.2918">
+					<from>On_line_1</from>
+					<to>Strength_of_neighborhood_effect</to>
+				</connector>
+				<aux x="547.5" y="1017.5" name="Weighting factor"/>
+				<connector uid="51" angle="23.7495">
+					<from>Weighting_factor</from>
+					<to>Strength_of_neighborhood_effect</to>
+				</connector>
+				<connector uid="52" angle="59.5345">
+					<from>Strength_of_neighborhood_effect</from>
+					<to>adoption_rate</to>
+				</connector>
+				<connector uid="53" angle="130.815">
+					<from>Strength_of_neighborhood_effect</from>
+					<to>potential_fraction_committed</to>
+				</connector>
+				<connector uid="54" color="black" angle="336.759">
+					<from>Loan_Principal</from>
+					<to>Daily_Loan_Payment</to>
+				</connector>
+				<connector uid="55" color="black" angle="270">
+					<from>loan_fraction</from>
+					<to>Initial_Equity_Investment</to>
+				</connector>
+				<connector uid="56" color="black" angle="9.60653">
+					<from>Expected_daily_op_Cost</from>
+					<to>Net_daily_rev</to>
+				</connector>
+				<connector uid="57" color="black" angle="0">
+					<from>discount_factor_loan_payment</from>
+					<to>Daily_Loan_Payment</to>
+				</connector>
+				<connector uid="58" color="black" angle="0">
+					<from>&quot;debt_interest_rate_as_%&quot;</from>
+					<to>debt_interest_rate_as_fraction</to>
+				</connector>
+				<connector uid="59" color="black" angle="0">
+					<from>debt_interest_rate_as_fraction</from>
+					<to>discount_factor_loan_payment</to>
+				</connector>
+				<connector uid="60" color="black" angle="269.477">
+					<from>Initial_Equity_Investment</from>
+					<to>Loan_Principal</to>
+				</connector>
+				<connector uid="61" color="black" angle="30.9638">
+					<from>term_of_loan</from>
+					<to>discount_factor_loan_payment</to>
+				</connector>
+				<aux color="black" x="2299" y="373.333" name="Initial Equity Investment"/>
+				<aux color="red" label_angle="109.991" x="2037.33" y="484" name="Fixed Capital Investment"/>
+				<aux color="red" label_angle="162.742" x="2063" y="894.833" name="Expected daily op Cost"/>
+				<aux color="red" font_color="red" label_angle="316.495" x="2299" y="294" name="loan fraction"/>
+				<aux color="black" label_angle="177.447" x="2297" y="592.333" name="Loan Principal"/>
+				<aux color="black" label_angle="216.675" x="2460" y="662.333" name="Daily Loan Payment"/>
+				<aux color="black" label_angle="30.5618" x="2385" y="840.333" name="Net daily rev"/>
+				<aux color="black" label_angle="113.149" x="2297" y="662.333" name="discount factor loan payment"/>
+				<aux color="red" font_color="red" x="2122" y="767.333" name="term of loan"/>
+				<aux color="red" font_color="red" x="2070" y="662.333" name="debt interest rate as %"/>
+				<aux color="black" x="2180" y="662.333" name="debt interest rate as fraction"/>
+				<stock background="#AAAAFF" x="2822.11" y="506.263" width="45" height="35" name="NPV of the project"/>
+				<flow x="2742.86" y="523.763" name="cash flows">
+					<pts>
+						<pt x="2651.61" y="523.763"/>
+						<pt x="2822.11" y="523.763"/>
+					</pts>
+				</flow>
+				<stock x="2813.75" y="691.333" name="daily discounter"/>
+				<flow label_side="top" x="2918.5" y="688.333" name="decrease in discounting">
+					<pts>
+						<pt x="2836.25" y="688.333"/>
+						<pt x="3024.75" y="688.333"/>
+					</pts>
+				</flow>
+				<connector uid="62" angle="315.644">
+					<from>daily_discounter</from>
+					<to>decrease_in_discounting</to>
+				</connector>
+				<aux color="black" label_side="right" x="2922.75" y="740.333" name="daily discount rate"/>
+				<connector uid="63" angle="145.061">
+					<from>actual_days_per_yr</from>
+					<to>daily_discount_rate</to>
+				</connector>
+				<connector uid="64" angle="59.2085">
+					<from>daily_discount_rate</from>
+					<to>decrease_in_discounting</to>
+				</connector>
+				<connector uid="65" angle="164.932">
+					<from>daily_discounter</from>
+					<to>cash_flows</to>
+				</connector>
+				<connector uid="66" angle="50.7743">
+					<from>
+						<alias uid="67"/>
+					</from>
+					<to>Daily_Loan_Payment</to>
+				</connector>
+				<aux color="red" font_color="red" x="2994.32" y="790.333" name="actual days per yr"/>
+				<connector uid="68" angle="49.1663">
+					<from>Net_daily_rev</from>
+					<to>cash_flows</to>
+				</connector>
+				<connector uid="69" angle="84.9575">
+					<from>Daily_Loan_Payment</from>
+					<to>cash_flows</to>
+				</connector>
+				<aux color="red" font_color="red" x="2736.32" y="805.333" name="required rate of return as pct"/>
+				<aux x="2830" y="772.333" name="requried rate of return as fraction"/>
+				<connector uid="70" angle="35.1377">
+					<from>required_rate_of_return_as_pct</from>
+					<to>requried_rate_of_return_as_fraction</to>
+				</connector>
+				<connector uid="71" angle="23.8059">
+					<from>requried_rate_of_return_as_fraction</from>
+					<to>daily_discount_rate</to>
+				</connector>
+				<stock x="2427.71" y="515.333" name="Stock 1"/>
+				<flow x="2367.61" y="500.333" width="18" height="18" name="Flow 1">
+					<pts>
+						<pt x="2348" y="509.333"/>
+						<pt x="2405.21" y="509.333"/>
+					</pts>
+				</flow>
+				<connector uid="72" angle="127.147">
+					<from>Daily_Loan_Payment</from>
+					<to>Flow_1</to>
+				</connector>
+				<aux x="2362" y="772.333" name="simulated time in years"/>
+				<aux x="2331" y="717.833" name="end loan payment switch"/>
+				<connector uid="73" angle="230.866">
+					<from>
+						<alias uid="67"/>
+					</from>
+					<to>simulated_time_in_years</to>
+				</connector>
+				<connector uid="74" angle="1.7357">
+					<from>term_of_loan</from>
+					<to>end_loan_payment_switch</to>
+				</connector>
+				<connector uid="75" angle="119.632">
+					<from>simulated_time_in_years</from>
+					<to>end_loan_payment_switch</to>
+				</connector>
+				<connector uid="76" angle="28.0245">
+					<from>end_loan_payment_switch</from>
+					<to>Daily_Loan_Payment</to>
+				</connector>
+				<aux x="1673.33" y="696.5" name="Heat Generation FiT"/>
+				<aux x="1594.58" y="467.5" name="Demand met by generation"/>
+				<connector uid="77" angle="31.31">
+					<from>Electricity_generation</from>
+					<to>Demand_met_by_generation</to>
+				</connector>
+				<connector uid="78" angle="313.679">
+					<from>Demand_met_by_generation</from>
+					<to>Elec_revenue</to>
+				</connector>
+				<connector uid="79" angle="27.7585">
+					<from>Surplus_Electricity</from>
+					<to>Demand_met_by_generation</to>
+				</connector>
+				<aux x="1658.33" y="624" name="Elec Price from grid"/>
+				<flow label_side="bottom" x="1750" y="658.959" name="Heat revenue">
+					<pts>
+						<pt x="1750" y="726.667"/>
+						<pt x="1750" y="591.25"/>
+					</pts>
+				</flow>
+				<connector uid="80" angle="90">
+					<from>Elec_Price_from_grid</from>
+					<to>Elec_revenue</to>
+				</connector>
+				<connector uid="81" angle="14.4137">
+					<from>Heat_Generation</from>
+					<to>Heat_revenue</to>
+				</connector>
+				<connector uid="82" angle="26.0898">
+					<from>Heat_Generation_FiT</from>
+					<to>Heat_revenue</to>
+				</connector>
+				<flow x="1750" y="489.792" name="Fertilizer revenue">
+					<pts>
+						<pt x="1750" y="423.333"/>
+						<pt x="1750" y="556.25"/>
+					</pts>
+				</flow>
+				<aux x="1746.25" y="341.25" name="Fertilizer generation"/>
+				<aux x="1838.75" y="341.25" name="Fertilizer price"/>
+				<aux x="1649.08" y="341.25" name="Fertilizer / Manure unit"/>
+				<connector uid="83" angle="16.6599">
+					<from>&quot;Fertilizer_/_Manure_unit&quot;</from>
+					<to>Fertilizer_generation</to>
+				</connector>
+				<connector uid="84" angle="351.573">
+					<from>
+						<alias uid="85"/>
+					</from>
+					<to>Fertilizer_generation</to>
+				</connector>
+				<connector uid="86" angle="276.843">
+					<from>Fertilizer_price</from>
+					<to>Fertilizer_revenue</to>
+				</connector>
+				<connector uid="87" angle="329.349">
+					<from>Fertilizer_generation</from>
+					<to>Fertilizer_revenue</to>
+				</connector>
+				<aux x="2104" y="323.25" name="Grant fraction"/>
+				<aux x="2072.5" y="386.25" name="Grant amount"/>
+				<connector uid="88" angle="70.2132">
+					<from>Fixed_Capital_Investment</from>
+					<to>Grant_amount</to>
+				</connector>
+				<connector uid="89" angle="227.307">
+					<from>Grant_fraction</from>
+					<to>Grant_amount</to>
+				</connector>
+				<aux x="2180" y="401.25" name="FCI after grant"/>
+				<connector uid="90" angle="8.42697">
+					<from>Grant_amount</from>
+					<to>FCI_after_grant</to>
+				</connector>
+				<connector uid="91" angle="30.1147">
+					<from>Fixed_Capital_Investment</from>
+					<to>FCI_after_grant</to>
+				</connector>
+				<connector uid="92" angle="23.7495">
+					<from>FCI_after_grant</from>
+					<to>Initial_Equity_Investment</to>
+				</connector>
+				<connector uid="93" angle="45">
+					<from>
+						<alias uid="94"/>
+					</from>
+					<to>Net_daily_rev</to>
+				</connector>
+				<connector uid="95" angle="62.8876">
+					<from>
+						<alias uid="96"/>
+					</from>
+					<to>Net_daily_rev</to>
+				</connector>
+				<connector uid="97" angle="96.3402">
+					<from>
+						<alias uid="98"/>
+					</from>
+					<to>Net_daily_rev</to>
+				</connector>
+				<connector uid="99" angle="330.945">
+					<from>Units</from>
+					<to>Expected_daily_op_Cost</to>
+				</connector>
+				<connector uid="100" angle="339.444">
+					<from>Units</from>
+					<to>Fixed_Capital_Investment</to>
+				</connector>
+				<stacked_container uid="101" x="2800.9" y="311.25">
+					<graph x="2625.9" y="186.25" width="350" height="250" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="NPV_of_the_project"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<connector uid="102" angle="310.746">
+					<from>FCI_after_grant</from>
+					<to>Loan_Principal</to>
+				</connector>
+				<aux x="983.75" y="707.5" name="Fraction time inside"/>
+				<connector uid="103" angle="81.2538">
+					<from>Fraction_time_inside</from>
+					<to>Manure_generated</to>
+				</connector>
+				<connector uid="104" angle="4.21909">
+					<from>Committed</from>
+					<to>Total_cows</to>
+				</connector>
+				<connector uid="105" angle="354.022">
+					<from>Committed</from>
+					<to>Units</to>
+				</connector>
+				<stacked_container uid="106" x="3443.33" y="1340">
+					<graph x="3268.33" y="1215" width="350" height="250" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Electricity_generation"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stock x="1740.42" y="181.25" name="Cumulated CO2eq savings"/>
+				<aux x="1450" y="241.583" width="18" height="18" name="GWP Methane"/>
+				<aux x="1459" y="160.333" name="UK Grid CO2 Footprint"/>
+				<flow x="1658.96" y="181.667" name="CO2 stream">
+					<pts>
+						<pt x="1600" y="181.667"/>
+						<pt x="1717.92" y="181.667"/>
+					</pts>
+				</flow>
+				<connector uid="107" angle="3.01279">
+					<from>
+						<alias uid="108"/>
+					</from>
+					<to>CO2_stream</to>
+				</connector>
+				<stacked_container uid="109" x="975.25" y="158.583" width="195.5" height="155">
+					<graph x="975.25" y="158.583" width="195.5" height="155" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Cumulated_CO2eq_savings"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="110" x="1007.5" y="8.41667" width="183.75" height="131.917">
+					<graph x="1007.5" y="8.41667" width="183.75" height="131.917" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Electricity_generation"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="111" x="1214" y="10" width="193.75" height="122.5">
+					<graph x="1214" y="10" width="193.75" height="122.5" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Gas_to_CHP"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="112" x="1186.5" y="164.75" width="212.75" height="159.5">
+					<graph x="1186.5" y="164.75" width="212.75" height="159.5" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="CO2_stream"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stacked_container uid="113" x="1804.75" y="10.625" width="268.75" height="148.75">
+					<graph x="1804.75" y="10.625" width="268.75" height="148.75" type="time_series" isee:points_only="false" show_grid="false" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" left_axis_multi_scale="false" left_axis_auto_scale="true" right_axis_multi_scale="false" right_axis_auto_scale="true">
+						<plot color="blue" pen_width="1" index="0" show_y_axis="true">
+							<entity name="UK_Grid_CO2_Footprint"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<stock x="2081.25" y="224.083" name="Cumulated elec gene"/>
+				<flow x="1948.13" y="224.083" name="Flow 2">
+					<pts>
+						<pt x="1837.5" y="224.083"/>
+						<pt x="2058.75" y="224.083"/>
+					</pts>
+				</flow>
+				<connector uid="114" angle="33.1874">
+					<from>
+						<alias uid="115"/>
+					</from>
+					<to>Flow_2</to>
+				</connector>
+				<connector uid="116" angle="32.3321">
+					<from>UK_Grid_CO2_Footprint</from>
+					<to>CO2_stream</to>
+				</connector>
+				<alias color="#008F44" font_style="italic" font_color="#008F44" uid="47" x="756.25" y="1323.75" width="45" height="35">
+					<of>Committed</of>
+				</alias>
+				<alias color="red" font_style="italic" font_color="red" uid="67" x="2418.71" y="707.043" width="18" height="18">
+					<of>actual_days_per_yr</of>
+				</alias>
+				<alias font_style="italic" uid="85" x="1682.25" y="286" width="18" height="18">
+					<of>Manure_for_Bio_Gas</of>
+				</alias>
+				<alias font_style="italic" uid="94" x="2263.5" y="948.5" width="18" height="18">
+					<of>Heat_revenue</of>
+				</alias>
+				<alias font_style="italic" uid="96" x="2335" y="948.5" width="18" height="18">
+					<of>Elec_revenue</of>
+				</alias>
+				<alias color="blue" background="white" font_style="italic" uid="98" x="2412.25" y="948.5" width="18" height="18">
+					<of>Fertilizer_revenue</of>
+				</alias>
+				<alias font_style="italic" uid="117" x="1450" y="198.75" width="18" height="18">
+					<of>Gas_to_CHP</of>
+				</alias>
+				<alias font_style="italic" uid="108" x="1536" y="76" width="18" height="18">
+					<of>Electricity_generation</of>
+				</alias>
+				<alias font_style="italic" uid="115" x="1859.75" y="267" width="18" height="18">
+					<of>Electricity_generation</of>
+				</alias>
+			</view>
+			<view background="white" page_width="1066" page_height="600" home_view="true" type="interface">
+				<style/>
+			</view>
+			<isee:templates>
+				<view background="white" page_width="1066" page_height="600" type="template">
+					<style/>
+				</view>
+			</isee:templates>
+			<isee:stories/>
+		</views>
+	</model>
+</xmile>
+
